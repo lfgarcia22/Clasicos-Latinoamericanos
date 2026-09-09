@@ -1,0 +1,10 @@
+# Conservar las clases de WorkManager para evitar que R8 las elimine
+-keep class androidx.work.** { *; }
+
+# Evitar que se eliminen las implementaciones de bases de datos generadas por Room
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.work.**
+
+# Mantener las anotaciones y clases de flagging del sistema Android
+-keep class android.os.flagging.** { *; }
+-dontwarn android.os.flagging.**

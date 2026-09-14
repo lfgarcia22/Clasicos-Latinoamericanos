@@ -130,8 +130,14 @@ InitTestScene*.unity*
 /[Aa]ssets/Firebase/Plugins/
 /[Aa]ssets/Firebase/Plugins.meta
 /[Aa]ssets/Firebase/Editor/*Deps.cs
+/[Aa]ssets/Firebase/**/*.meta
+/[Aa]ssets/Firebase.meta
 /[Aa]ssets/GeneratedLocalRepo/
 /[Aa]ssets/GeneratedLocalRepo.meta
+/[Aa]ssets/Plugins/**/Firebase/*.meta
+/[Aa]ssets/Plugins/**/Firebase.meta
+/[Aa]ssets/Plugins/*.meta
+/[Aa]ssets/Plugins.meta
 
 # Caché y dependencias descargadas por el Play Services Resolver / External Dependency Manager (EDM4U)
 /[Aa]ssets/PlayServicesResolver/

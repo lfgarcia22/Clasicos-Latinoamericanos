@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveInputActions
   player: {fileID: 0}
-  walkSpeed: 5
+  walkSpeed: 3
   eventMove: {fileID: 11400000, guid: 24f6de742d6fd425faa7cfd5b79ece62, type: 2}
 --- !u!1 &4979582990894114692
 GameObject:

@@ -933,7 +933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SplashScreenBehavior
   continueToScene: 1
-  sceneName: Cantunita_Scenes/CantunitaBuild.unity
+  sceneName: Cantunita_Scenes/CantunitaStory.unity
   waitToNextScene: 5
   slider: {fileID: 49784760}
   waitSeconds: 0.05

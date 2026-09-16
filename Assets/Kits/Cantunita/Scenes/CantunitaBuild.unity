@@ -941,6 +941,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1857726932}
     m_Modifications:
+    - target: {fileID: 2278375174381676284, guid: 1372faa3835e042c1bf22395bd4743a4, type: 3}
+      propertyPath: homeScene
+      value: Cantunita_Scenes/CantunitaStory.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278375174381676284, guid: 1372faa3835e042c1bf22395bd4743a4, type: 3}
+      propertyPath: currentScene
+      value: Cantunita_Scenes/CantunitaBuild.unity
+      objectReference: {fileID: 0}
     - target: {fileID: 4191792290172801730, guid: 1372faa3835e042c1bf22395bd4743a4, type: 3}
       propertyPath: m_Name
       value: PauseMenu

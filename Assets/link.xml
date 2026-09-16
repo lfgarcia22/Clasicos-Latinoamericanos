@@ -1,0 +1,14 @@
+<linker>
+  <assembly fullname="UnityEngine">
+    <type fullname="UnityEngine.PlayerPrefs" preserve="all"/>
+    <type fullname="UnityEngine.Diagnostics.Utils" preserve="all"/>
+  </assembly>
+  <assembly fullname="mscorlib">
+    <type fullname="System.IO.File" preserve="all"/>
+    <type fullname="System.Runtime.CompilerServices.RuntimeHelpers" preserve="all"/>
+    <type fullname="System.Type" preserve="all"/>
+  </assembly>
+  <assembly fullname="System">
+    <type fullname="System.ComponentModel.TypeConverter" preserve="all"/>
+  </assembly>
+</linker>

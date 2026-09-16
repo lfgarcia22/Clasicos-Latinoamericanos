@@ -47,6 +47,8 @@ android {
         }
         release {
             minifyEnabled **MINIFY_RELEASE**
+            shrinkResources true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')**SIGNCONFIG**
         }
     }**PACKAGING****PLAY_ASSET_PACKS****SPLITS**

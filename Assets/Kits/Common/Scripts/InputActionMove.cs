@@ -36,21 +36,24 @@ public class InputActionMove : MonoBehaviour
 
   private void FixedUpdate()
   {
-    if (allowToMove && playerWrapper != null)
+    if (allowToMove)
     {
-      playerWrapper.transform.Translate(Vector3.forward * moveVector.z * walkSpeed * Time.deltaTime, Space.World);
-      playerWrapper.transform.Translate(Vector3.right * moveVector.x * walkSpeed * Time.deltaTime, Space.World);
-    }
+      if (playerWrapper != null)
+      {
+        playerWrapper.transform.Translate(Vector3.right * moveVector.x * walkSpeed * Time.deltaTime, Space.World);
+        playerWrapper.transform.Translate(Vector3.forward * moveVector.z * walkSpeed * Time.deltaTime, Space.World);
+      }
 
-    var isMoving = moveVector.x != 0 || moveVector.z != 0;
-    animator.SetBool("IsWalking", isMoving);
-    if (isMoving)
-    {
-      player.transform.LookAt(new Vector3(
-        playerWrapper.transform.localPosition.x + (moveVector.x * 4),
-        moveVector.y,
-        playerWrapper.transform.localPosition.z + (moveVector.z * 4)
-      ));
+      var isMoving = moveVector.x != 0 || moveVector.z != 0;
+      animator.SetBool("IsWalking", isMoving);
+      if (isMoving)
+      {
+        player.transform.LookAt(new Vector3(
+          playerWrapper.transform.localPosition.x + (moveVector.x * 4),
+          moveVector.y,
+          playerWrapper.transform.localPosition.z + (moveVector.z * 4)
+        ));
+      }
     }
   }
 

@@ -5,21 +5,39 @@ using UnityEngine;
 public class EventSkillSO : ScriptableObject
 {
 
-  private Action onInteractable;
+  private Action<bool> isVisible;
 
-  public void IsInteractable()
+  public void IsVisible(bool value)
   {
-    onInteractable?.Invoke();
+    isVisible?.Invoke(value);
   }
 
-  public void RegisterInteractable(Action listener)
+  public void RegisterIsVisible(Action<bool> listener)
   {
-    onInteractable += listener;
+    isVisible += listener;
   }
 
-  public void UnregisterInteractable(Action listener)
+  public void UnregisterIsVisible(Action<bool> listener)
   {
-    onInteractable -= listener;
+    isVisible -= listener;
+  }
+
+
+  private Action<bool> isEnabled;
+
+  public void IsEnabled(bool value)
+  {
+    isEnabled?.Invoke(value);
+  }
+
+  public void RegisterIsEnabled(Action<bool> listener)
+  {
+    isEnabled += listener;
+  }
+
+  public void UnregisterIsEnabled(Action<bool> listener)
+  {
+    isEnabled -= listener;
   }
 
 

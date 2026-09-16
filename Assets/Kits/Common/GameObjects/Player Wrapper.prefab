@@ -96,5 +96,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e41e042bc014d56b44686a9ca4db04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehavior
-  eventInteract: {fileID: 11400000, guid: 7809e41d259fb4025bb09d341a2bace3, type: 2}
-  eventSkill: {fileID: 11400000, guid: 771382454bf044d15ac9c71535b6421d, type: 2}
+  interactEvent: {fileID: 11400000, guid: 7809e41d259fb4025bb09d341a2bace3, type: 2}
+  skillEvent: {fileID: 11400000, guid: 771382454bf044d15ac9c71535b6421d, type: 2}

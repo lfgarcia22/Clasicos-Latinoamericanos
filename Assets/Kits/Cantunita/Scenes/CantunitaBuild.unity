@@ -1834,6 +1834,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1857726932}
     m_Modifications:
+    - target: {fileID: 252791569416246786, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 787304927460380742, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1855,13 +1859,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4728596233892759490, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: moveSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 24f6de742d6fd425faa7cfd5b79ece62, type: 2}
+    - target: {fileID: 4728596233892759490, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1174411785315285839}
     - target: {fileID: 4728596233892759490, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: skillSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 771382454bf044d15ac9c71535b6421d, type: 2}
+    - target: {fileID: 4728596233892759490, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
       propertyPath: playerWrapper
       value: 
       objectReference: {fileID: 491508614}
+    - target: {fileID: 4823463456202583960, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: skillSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 771382454bf044d15ac9c71535b6421d, type: 2}
+    - target: {fileID: 7796849840787615144, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796849840787615144, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796849840787615144, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796849840787615144, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8509703071282703528, guid: 23fcc35acddf2407ba2961303c16b846, type: 3}
       propertyPath: m_Name
       value: ControlManagement
@@ -1919,6 +1951,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6697617344982890232, guid: 19e7f1ba7f29a4e349c148842462cef5, type: 3}
+      propertyPath: skillSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 771382454bf044d15ac9c71535b6421d, type: 2}
+    - target: {fileID: 6697617344982890232, guid: 19e7f1ba7f29a4e349c148842462cef5, type: 3}
+      propertyPath: interactSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 7809e41d259fb4025bb09d341a2bace3, type: 2}
     - target: {fileID: 6763165085113055041, guid: 19e7f1ba7f29a4e349c148842462cef5, type: 3}
       propertyPath: m_Name
       value: Player Wrapper

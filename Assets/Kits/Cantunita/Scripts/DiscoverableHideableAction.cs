@@ -4,9 +4,11 @@ using UnityEngine.InputSystem;
 public class DiscoverableHideableActions : MonoBehaviour
 {
 
-  [SerializeField] private EventInteractSO eventInteract;
+  [SerializeField] private EventInteractSO interactSO;
 
-  [SerializeField] private EventMoveSO eventMove;
+  [SerializeField] private EventMoveSO moveSO;
+
+  [SerializeField] private EventSkillSO skillSO;
 
   [SerializeField] private bool isHideableObject = false;
 
@@ -55,7 +57,7 @@ public class DiscoverableHideableActions : MonoBehaviour
   {
     if (isActionable && !isHideableObject)
     {
-      eventInteract.IsInteractable();
+      interactSO.IsInteractable();
       Destroy(gameObject);
     }
 
@@ -63,11 +65,12 @@ public class DiscoverableHideableActions : MonoBehaviour
     {
       var playerRigidbody = player.GetComponent<Rigidbody>();
       playerRigidbody.isKinematic = !isPlayerHidden;
+      skillSO.IsVisible(isPlayerHidden);
 
       var playerMeshRenderer = player.GetComponentInChildren<SkinnedMeshRenderer>();
       playerMeshRenderer.enabled = isPlayerHidden;
       isPlayerHidden = !isPlayerHidden;
-      eventMove.IsMovable();
+      moveSO.IsMovable();
     }
   }
 

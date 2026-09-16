@@ -232,8 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d937eaadad53f4d1cb8b6c8c988fedcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DiscoverableHideableActions
-  eventInteract: {fileID: 11400000, guid: 7809e41d259fb4025bb09d341a2bace3, type: 2}
-  eventMove: {fileID: 11400000, guid: 24f6de742d6fd425faa7cfd5b79ece62, type: 2}
+  interactSO: {fileID: 11400000, guid: 7809e41d259fb4025bb09d341a2bace3, type: 2}
+  moveSO: {fileID: 11400000, guid: 24f6de742d6fd425faa7cfd5b79ece62, type: 2}
+  skillSO: {fileID: 11400000, guid: 771382454bf044d15ac9c71535b6421d, type: 2}
   isHideableObject: 1
 --- !u!1 &6275336880798083686
 GameObject:

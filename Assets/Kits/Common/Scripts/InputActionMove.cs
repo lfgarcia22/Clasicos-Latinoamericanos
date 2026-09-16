@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.OnScreen;
@@ -6,11 +7,14 @@ public class InputActionMove : MonoBehaviour
 {
 
   [SerializeField] private GameObject playerWrapper;
+
   [SerializeField] private GameObject player;
 
   [SerializeField] private float walkSpeed = 5;
 
-  [SerializeField] private EventMoveSO eventMove;
+  [SerializeField] private EventMoveSO moveSO;
+
+  [SerializeField] private EventSkillSO skillSO;
 
 
   private bool allowToMove = true;
@@ -18,6 +22,7 @@ public class InputActionMove : MonoBehaviour
   private InputAction moveAction;
   private Vector3 moveVector;
   private Animator animator;
+  private float previousWalkSpeed;
 
 
   private void Awake()
@@ -25,6 +30,7 @@ public class InputActionMove : MonoBehaviour
     moveAction = InputSystem.actions.FindAction("Move");
     childStickController = GetComponentInChildren<OnScreenStick>();
     animator = playerWrapper?.GetComponentInChildren<Animator>();
+    previousWalkSpeed = walkSpeed + 0;
   }
 
 
@@ -60,12 +66,14 @@ public class InputActionMove : MonoBehaviour
 
   private void OnEnable()
   {
-    eventMove?.RegisterMovable(MovableEvent);
+    moveSO?.RegisterMovable(MovableEvent);
+    skillSO?.RegisterCompleteAction(CompleteSkillEvent);
   }
 
   private void OnDisable()
   {
-    eventMove?.UnregisterMovable(MovableEvent);
+    moveSO?.UnregisterMovable(MovableEvent);
+    skillSO?.UnregisterCompleteAction(CompleteSkillEvent);
   }
 
 
@@ -73,6 +81,20 @@ public class InputActionMove : MonoBehaviour
   {
     allowToMove = !allowToMove;
     childStickController.enabled = allowToMove;
+  }
+
+
+  private void CompleteSkillEvent()
+  {
+    StopCoroutine(WaitBeforeReduceSpeed());
+    walkSpeed *= 2;
+    StartCoroutine(WaitBeforeReduceSpeed());
+  }
+
+  private IEnumerator WaitBeforeReduceSpeed()
+  {
+    yield return new WaitForSeconds(3);
+    walkSpeed = previousWalkSpeed + 0;
   }
 
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,18 @@ public class CantunitaStoryManager : MonoBehaviour
   [Label("Replay Button GameObject")]
   [SerializeField]
   private GameObject replayButton;
+
+  [Label("Event SO - Sound Manager")]
+  [SerializeField]
+  private EventSoundManagerSO soundManagerSO;
+
+  [Label("Enable Sound Button GameObject")]
+  [SerializeField]
+  private GameObject enableButton;
+
+  [Label("Disable Sound Button GameObject")]
+  [SerializeField]
+  private GameObject disableButton;
 
   [Header("Main Discoverable")]
   [Label("Story Dialog GameObject")]
@@ -64,6 +77,8 @@ public class CantunitaStoryManager : MonoBehaviour
     {
       InitStoryDialog();
     }
+
+    EnableDisableSoundGameObject();
   }
 
 
@@ -181,6 +196,37 @@ public class CantunitaStoryManager : MonoBehaviour
         isDialogHiding = true;
       }
     }
+  }
+
+
+  /// <summary>
+  /// Allow the player to enable the sound of the game.
+  /// </summary>
+  public void EnableSound()
+  {
+    soundManagerSO?.EnableDisableSound(true);
+    EnableDisableSoundGameObject();
+  }
+
+
+  /// <summary>
+  /// Allow the player to disable the sound of the game.
+  /// </summary>
+  public void DisableSound()
+  {
+    soundManagerSO?.EnableDisableSound(false);
+    EnableDisableSoundGameObject();
+  }
+
+
+  /// <summary>
+  /// Manage buttons (gameobjects) to show/hide based on player preferences.
+  /// </summary>
+  private void EnableDisableSoundGameObject()
+  {
+    var isSoundEnabled = PlayerPrefs.GetInt("SoundEnabled") == 1;
+    enableButton.SetActive(!isSoundEnabled);
+    disableButton.SetActive(isSoundEnabled);
   }
 
 }

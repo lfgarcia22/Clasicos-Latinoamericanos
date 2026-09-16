@@ -48,10 +48,10 @@ public class CantunitaStoryManager : MonoBehaviour
   [SerializeField]
   private TextMeshProUGUI storyDialogText;
 
-  [Label("Paragraphs of the story")]
-  [ReorderableList]
+  [Label("Full story")]
+  [ResizableTextArea]
   [SerializeField]
-  private List<string> storyParagraphs;
+  private string storyAllText;
 
   [Label("Writing speed")]
   [SerializeField]
@@ -62,11 +62,13 @@ public class CantunitaStoryManager : MonoBehaviour
   private bool isDialogShowing = false;
   private bool isDialogHiding = false;
   private int paragraphIdx = 0;
+  private List<string> storyParagraphs;
   private bool isWriting = false;
 
 
   private void Awake()
   {
+    storyParagraphs = storyAllText.Split("<br>").ToList();
     var isStoryRead = PlayerPrefs.GetInt("StoryRead") == 1;
     if (isStoryRead)
     {

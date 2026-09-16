@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 
   public static AudioManager Instance;
 
+  [SerializeField] private EventSoundManagerSO soundManagerSO;
+
   [SerializeField] private float cutStartSeconds = 1.0f;
   [SerializeField] private float cutEndSeconds = 2.0f;
 
@@ -40,6 +42,17 @@ public class AudioManager : MonoBehaviour
   }
 
 
+  private void OnEnable()
+  {
+    soundManagerSO?.RegisterEnableDisableSound(EnableDisableSound);
+  }
+
+  private void OnDisable()
+  {
+    soundManagerSO?.UnregisterEnableDisableSound(EnableDisableSound);
+  }
+
+
   /// <summary>
   /// Fix audio clip size based on start and end seconds.
   /// </summary>
@@ -53,6 +66,11 @@ public class AudioManager : MonoBehaviour
       yield return new WaitForSeconds(songSize);
       initialCut = cutStartSeconds;
     }
+  }
+
+  private void EnableDisableSound(bool isEnabled)
+  {
+    audioSource.volume = isEnabled ? 1 : 0;
   }
 
 }

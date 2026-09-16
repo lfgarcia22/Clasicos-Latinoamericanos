@@ -61,6 +61,9 @@ public class DiscoverableHideableActions : MonoBehaviour
 
     if (isActionable && isHideableObject && player != null)
     {
+      var playerRigidbody = player.GetComponent<Rigidbody>();
+      playerRigidbody.isKinematic = !isPlayerHidden;
+
       var playerMeshRenderer = player.GetComponentInChildren<SkinnedMeshRenderer>();
       playerMeshRenderer.enabled = isPlayerHidden;
       isPlayerHidden = !isPlayerHidden;

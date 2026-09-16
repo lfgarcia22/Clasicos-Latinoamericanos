@@ -8,7 +8,7 @@ TerrainLayer:
   m_PrefabAsset: {fileID: 0}
   m_Name: CantuniaTerrainLayer
   m_DiffuseTexture: {fileID: 2800000, guid: d762ec1c4a06b4a5cb88139d23acb747, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: d762ec1c4a06b4a5cb88139d23acb747, type: 3}
+  m_NormalMapTexture: {fileID: 0}
   m_MaskMapTexture: {fileID: 2800000, guid: d762ec1c4a06b4a5cb88139d23acb747, type: 3}
   m_TileSize: {x: 2.5, y: 2.5}
   m_TileOffset: {x: 0, y: 0}

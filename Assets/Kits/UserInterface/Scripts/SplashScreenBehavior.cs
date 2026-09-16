@@ -26,14 +26,15 @@ public class SplashScreenBehavior : MonoBehaviour
   {
     StartCoroutine(StartLoadingScene());
     StartCoroutine(TestCrash());
-    InitFirebase();
+    StartCoroutine(InitFirebase());
+    StartCoroutine(MoveToFirstScene());
   }
 
 
   /// <summary>
   /// Start all Firebase settings, this will check and fix dependencies
   /// </summary>
-  private void InitFirebase()
+  private IEnumerator InitFirebase()
   {
     FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
     {
@@ -41,14 +42,13 @@ public class SplashScreenBehavior : MonoBehaviour
       if (dependencyStatus == DependencyStatus.Available)
       {
         var fireApp = FirebaseApp.DefaultInstance;
-
-        StartCoroutine(MoveToFirstScene());
       }
       else
       {
         Debug.LogError($"[FIREBASE] No se pudieron resolver las dependencias de Firebase: {dependencyStatus}");
       }
     });
+    yield return null;
   }
 
 

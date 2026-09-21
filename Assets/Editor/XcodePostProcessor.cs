@@ -45,7 +45,6 @@ public class XcodePostProcessor
     string entitlementFileName = "Clasicos Latinoamericanos.entitlements";
     var capabilityManager = new ProjectCapabilityManager(pbxProjectPath, entitlementFileName, null, targetGuid);
     capabilityManager.AddGameCenter();
-    capabilityManager.AddBackgroundModes(BackgroundModesOptions.AudioAirplayPiP);
     capabilityManager.WriteToFile();
 
 
